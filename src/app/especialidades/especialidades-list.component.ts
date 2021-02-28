@@ -27,11 +27,23 @@ export class EspecialidadesListComponent implements OnInit {
       },
     ],
     editableRow: true,
-    editableRowClick: (row: Especialidade) => this.detalhesEspecialidade(row)
+    deletableRow: true,
+    addButton: true,
+    editableRowClick: (row: Especialidade) => this.editarEspecialidade(row),
+    deletableRowClick: (row: Especialidade) => this.deletarEspecialidade(row),
+    addButtonClick: () => this.adicionarEspecialidade()
   }
 
-  detalhesEspecialidade(row: Especialidade){
+  editarEspecialidade(row: Especialidade){
     console.log(row)
+  }
+
+  deletarEspecialidade(row: Especialidade){
+    console.log(row)
+  }
+
+  adicionarEspecialidade(){
+
   }
 
   constructor() { }

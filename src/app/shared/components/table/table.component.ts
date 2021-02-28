@@ -19,7 +19,19 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  colunaAcoes(){
+    return this.config?.editableRow || this.config?.deletableRow
+  }
+
   editableRowClick(row: any){
     this.config?.editableRowClick ? this.config.editableRowClick(row) : null
+  }
+
+  deletableRowClick(row: any){
+    this.config?.deletableRowClick ? this.config.deletableRowClick(row) : null
+  }
+
+  addButtonClick(){
+    this.config?.addButtonClick ? this.config.addButtonClick : null
   }
 }
