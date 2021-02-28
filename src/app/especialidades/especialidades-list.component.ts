@@ -15,16 +15,24 @@ export class EspecialidadesListComponent implements OnInit {
     { id: 3, nome: 'Cardiologista' },
   ]
 
-  configTable: TableConfig[] = [
-    {
-      column: 'ID',
-      property: 'id'
-    },
-    {
-      column: 'Nome',
-      property: 'nome'
-    },
-  ]
+  configTable: TableConfig<Especialidade> = {
+    cols: [
+      {
+        column: 'ID',
+        property: 'id'
+      },
+      {
+        column: 'Nome',
+        property: 'nome'
+      },
+    ],
+    editableRow: true,
+    editableRowClick: (row: Especialidade) => this.detalhesEspecialidade(row)
+  }
+
+  detalhesEspecialidade(row: Especialidade){
+    console.log(row)
+  }
 
   constructor() { }
 

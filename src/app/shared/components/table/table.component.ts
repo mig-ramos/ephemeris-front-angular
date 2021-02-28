@@ -12,11 +12,14 @@ export class TableComponent implements OnInit {
   dados: any[] = []
 
   @Input()
-  config: TableConfig[] = []
+  config: TableConfig<any> | undefined
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  editableRowClick(row: any){
+    this.config?.editableRowClick ? this.config.editableRowClick(row) : null
+  }
 }
