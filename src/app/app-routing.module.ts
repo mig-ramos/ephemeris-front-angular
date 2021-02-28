@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { EspecialidadesListComponent } from './especialidades/especialidades-list.component';
+import { EspecialidadesModule } from './especialidades/especialidades.module';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
-  { path: 'especialidades', component: EspecialidadesListComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: '**', redirectTo: 'home', pathMatch: 'full' }
 ];
@@ -13,6 +12,7 @@ const routes: Routes = [
 @NgModule({
   imports: [
     RouterModule.forRoot(routes),
+    EspecialidadesModule
   ],
   exports: [RouterModule]
 })

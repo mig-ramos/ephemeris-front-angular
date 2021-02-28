@@ -1,0 +1,20 @@
+<div class="table-responsive">
+  <table class="table">
+    <thead>
+      <tr>
+        <th *ngFor="let itemConfig1 of config">
+          {{itemConfig1.column}}
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let itemDados of dados">
+        <ng-container *ngFor="let itemConfig2 of config">
+          <td>
+            {{itemDados[itemConfig2.property]}}
+          </td>
+        </ng-container>
+      </tr>
+    </tbody>
+  </table>
+</div>
