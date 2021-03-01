@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { TableConfig } from '../shared/components/table/table-config.model';
 import { Especialidade } from '../shared/models/especialidade.model';
 
@@ -34,8 +35,13 @@ export class EspecialidadesListComponent implements OnInit {
     addButtonClick: () => this.adicionarEspecialidade()
   }
 
+  constructor(private router: Router) { }
+
+  ngOnInit(): void {
+  }
+
   editarEspecialidade(row: Especialidade){
-    console.log(row)
+    this.router.navigate(['/especialidades', row.id])
   }
 
   deletarEspecialidade(row: Especialidade){
@@ -43,12 +49,7 @@ export class EspecialidadesListComponent implements OnInit {
   }
 
   adicionarEspecialidade(){
-
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
+    // this.router.navigate(['/especialidades/:id', ])
   }
 
 }

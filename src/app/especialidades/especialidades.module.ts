@@ -13,11 +13,11 @@ import { RouterModule } from '@angular/router';
   imports: [
     RouterModule.forChild([
       { path: 'especialidades', component: EspecialidadesListComponent },
-      // {
-      //   path: 'especialidades/:id',
-      //   canActivate: [EspecialidadesDetailGuard],
-      //   component: EspecialidadesDetailComponent
-      // }
+      {
+        path: 'especialidades/:id',
+        // canActivate: [EspecialidadesDetailGuard],
+        component: EspecialidadesDetailComponent
+      }
     ]),
     SharedModule
   ]
